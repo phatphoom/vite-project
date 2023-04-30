@@ -2,10 +2,10 @@ const Antonym = ({ result }) => {
   const { meanings } = result;
   return (
     <>
-      <h3>Synonym</h3>
+      <h3>Antonym</h3>
       {meanings &&
         meanings.map((meaning) =>
-          meaning.antonym?.map((syn) => <li>{syn}</li>)
+          meaning.antonyms?.map((syn) => <li>{syn}</li>)
         )}
     </>
   );
