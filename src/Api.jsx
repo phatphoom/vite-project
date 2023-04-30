@@ -1,6 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Comp from "./Comp";
+import Comp from "./component/Comp";
+import Word from "./component/Word";
+import Meanings from "./component/Meanings";
+import Example from "./component/Example";
+
 function Api() {
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState(null);
@@ -25,7 +29,13 @@ function Api() {
         onChange={(e) => setKeyword(e.target.value)}
         onKeyDown={search}
       />
-      {result && <Comp {...{ result }} />}
+      {result && (
+        <div>
+          <Word {...{ result }} />
+          <Meanings {...{ result }} />
+          <Example {...{ result }} />
+        </div>
+      )}
     </div>
   );
 }
