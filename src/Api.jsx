@@ -4,7 +4,8 @@ import Comp from "./component/Comp";
 import Word from "./component/Word";
 import Meanings from "./component/Meanings";
 import Example from "./component/Example";
-
+import Synonym from "./component/Synonymns";
+import Antonym from "./component/Antonym";
 function Api() {
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState(null);
@@ -34,6 +35,8 @@ function Api() {
           <Word {...{ result }} />
           <Meanings {...{ result }} />
           <Example {...{ result }} />
+          <Synonym {...{ result }} />
+          <Antonym {...{ result }} />
         </div>
       )}
     </div>
