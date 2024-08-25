@@ -4,7 +4,7 @@ export default function Meanings({ result }) {
     meanings &&
     meanings.map((meaning) => (
       <div key={meaning.partOfSpeech}>
-        <h3>{meaning.partOfSpeech}</h3>
+        <h4>{meaning.partOfSpeech}</h4>
         <ul>
           {meaning.definitions
             .filter(

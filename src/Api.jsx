@@ -1,14 +1,17 @@
 import axios from "axios";
-import React, { useState } from "react";
-import Comp from "./component/Comp";
+import React, { useEffect, useState } from "react";
 import Word from "./component/Word";
 import Meanings from "./component/Meanings";
 import Example from "./component/Example";
 import Synonym from "./component/Synonymns";
 import Antonym from "./component/Antonym";
+import "./style/syn.css";
+import "./style/api.css";
+
 function Api() {
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState(null);
+  const [history, setHistory] = useState([]);
   const api = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
   async function search(e) {
@@ -22,8 +25,11 @@ function Api() {
       console.log({ e });
     }
   }
+
   return (
-    <div>
+    <div className="container">
+      <h3>DF</h3>
+      <p>vite-project</p>
       <input
         type="text"
         value={keyword}
@@ -31,12 +37,14 @@ function Api() {
         onKeyDown={search}
       />
       {result && (
-        <div>
+        <div className="api">
           <Word {...{ result }} />
           <Meanings {...{ result }} />
           <Example {...{ result }} />
-          <Synonym {...{ result }} />
-          <Antonym {...{ result }} />
+          <div className="sa">
+            <Synonym {...{ result }} />
+            <Antonym {...{ result }} />
+          </div>
         </div>
       )}
     </div>

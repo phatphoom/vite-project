@@ -1,0 +1,44 @@
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 5px;
+}
+h3,
+h4 {
+  margin: 10px;
+}
+
+.word h3 {
+  margin: 10px 10px 0 10px;
+}
+.word {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+}
+.word p {
+  font-size: 10px;
+  margin-left: 10px;
+}
+.sa {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+.sa h4 {
+  text-align: center;
+}
+.api {
+  width: 600px;
+}
+
+.audio {
+  width: fit-content;
+}
+.audio:hover {
+  cursor: pointer;
+}
